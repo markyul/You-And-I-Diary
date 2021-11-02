@@ -23,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        calendar.addDecorators(SundayDecorator(), SaturdayDecorator())
+        val today = CalendarDay.today()
+        calendar.addDecorators(SundayDecorator(), SaturdayDecorator(), TodayDecorator(today))
+        calendar.selectedDate = today
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -56,5 +58,16 @@ class SaturdayDecorator: DayViewDecorator {
 
     override fun decorate(view: DayViewFacade?) {
         view?.addSpan(object: ForegroundColorSpan(Color.BLUE){})
+    }
+}
+
+class TodayDecorator(today: CalendarDay): DayViewDecorator {
+    var myDay = today
+    override fun shouldDecorate(day: CalendarDay?): Boolean {
+        return day == myDay
+    }
+
+    override fun decorate(view: DayViewFacade?) {
+        view?.addSpan(object: ForegroundColorSpan(Color.parseColor("#FF018786")){})
     }
 }
