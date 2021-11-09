@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/primary"
+    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="D - Day"
                 android:textSize="20sp"
-                android:textColor="@color/accent"
+                android:textColor="@color/primary"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
@@ -42,13 +42,14 @@
                 android:layout_height="wrap_content"
                 android:text="캘린더"
                 android:textSize="20sp"
-                android:textColor="@color/accent"
+                android:textColor="@color/primary"
                 android:textStyle="bold"/>
             <com.prolificinteractive.materialcalendarview.MaterialCalendarView
                 android:id="@+id/calendar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:mcv_selectionColor="@color/accent"/>
+                app:mcv_selectionColor="@color/primary"
+                app:mcv_showOtherDates="other_months"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -56,7 +57,7 @@
                 android:layout_marginTop="20dp"
                 android:text="0월 00일"
                 android:textSize="20sp"
-                android:textColor="@color/accent"
+                android:textColor="@color/primary"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
@@ -71,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="공유 메모"
                 android:textSize="20sp"
-                android:textColor="@color/accent"
+                android:textColor="@color/primary"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
